@@ -7,6 +7,7 @@
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
 from send_email import sm
 import os
 
