@@ -23,8 +23,8 @@ def checkin(username, password, email_address, email_lisence):
     daka = "http://my.lzu.edu.cn:8080/login?service=http://my.lzu.edu.cn"
 #         driver = webdriver.Chrome()
     driver.get(daka)
-    driver.find_element_by_id("username").send_keys("{}").format(username)
-    driver.find_element_by_id("password").send_keys("{}").format(password)
+    driver.find_element_by_id("username").send_keys("{}".format(username))
+    driver.find_element_by_id("password").send_keys("{}".format(password))
     driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[2]/div/form/div[4]/button").click()
 
     sleep(3)
@@ -55,11 +55,11 @@ def checkin(username, password, email_address, email_lisence):
     driver.quit()
     print('sucess')
     #发送成功邮件
-    # sm("{}", "{}", "{}", "打卡成功！", "打卡成功！not bad!" ).format(email_address, email_lisence, email_address)
+    # sm("{}".format(email_address), "{}".format(email_lisence), "{}".format(email_address), "打卡成功！", "打卡成功！not bad!")
 #     except Exception as e:
 #         print('fail')
 #         #发送失败邮件
-#         #sm("{}", "{}", "{}", "打卡失败！", "打卡失败！not well!建议手动打卡" ).format(email_address, email_lisence, email_address)
+#         #sm("{}".format(email_address), "{}".format(email_lisence), "{}".format(email_address), "打卡失败！", "打卡失败！not well!建议手动打卡".format(email_address, email_lisence, email_address) )
 #         pass
 
 checkin(username = os.environ["USERNAME"],
