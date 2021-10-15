@@ -51,6 +51,10 @@ def checkin(username, password, email_address, email_lisence):
         #发送失败邮件
         sm("{}", "{}", "1846128548@qq.com", "打卡失败！", "打卡失败！not well!建议手动打卡" ).format(email_address, email_lisence)
 
+checkin(username = os.environ["USERNAME"],
+        password = os.environ["PASSWORD"], 
+        email_address = os.environ["EMAIL_ADDRESS"], 
+        email_lisence = os.environ["EMAIL_LISENCE"])
 
 # In[ ]:
 
