@@ -34,9 +34,9 @@ jobs:
         with:
            python-version: 3.7
            
-      - name: Install requirements
-        run: |
-              pip install -r ./requirements.txt
+#       - name: Install requirements
+#         run: |
+#               pip install -r ./requirements.txt
 
       - name: 'Working'
         env:
@@ -45,6 +45,7 @@ jobs:
          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
          EMAIL_LISENCE: ${{ secrets.EMAIL_LISENCE }}
         run: |
+          pip install -r ./requirements.txt
           sudo cp -p chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
           python jkdk.py
