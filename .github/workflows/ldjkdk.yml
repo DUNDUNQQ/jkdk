@@ -35,8 +35,8 @@ jobs:
            python-version: 3.7
            
       - name: 'Install requirements'
-        run: pip install -r requirements.txt
-             pip show selenium
+        run: pip install lxml==4.5.1
+             pip install  selenium==3.141.0
 
       - name: 'Working'
         env:
