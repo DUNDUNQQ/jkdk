@@ -8,8 +8,8 @@ on:
   push:
     branches: 
       - master
-  schedule:
-    - cron: '0,30 * * * *'
+#   schedule:
+#     - cron: '0,30 * * * *'
   pull_request:
     branches: [ main ]
 
