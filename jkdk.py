@@ -57,10 +57,11 @@ def checkin(username, password, email_address, email_lisence):
         sleep(3)
         driver.quit()
         #发送成功邮件
-        sm("{}", "{}", "{}", "打卡成功！", "打卡成功！not bad!" ).format(email_address, email_lisence, email_address)
+        # sm("{}", "{}", "{}", "打卡成功！", "打卡成功！not bad!" ).format(email_address, email_lisence, email_address)
     except Exception as e:
         #发送失败邮件
-        sm("{}", "{}", "{}", "打卡失败！", "打卡失败！not well!建议手动打卡" ).format(email_address, email_lisence, email_address)
+        #sm("{}", "{}", "{}", "打卡失败！", "打卡失败！not well!建议手动打卡" ).format(email_address, email_lisence, email_address)
+        pass
 
 checkin(username = os.environ["USERNAME"],
         password = os.environ["PASSWORD"], 
