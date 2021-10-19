@@ -51,7 +51,8 @@ def sm(sender_email, sender_license, rerceiver_email, subject, content ):
     # 创建SMTP对象
     stp = smtplib.SMTP()
     # 设置发件人邮箱的域名和端口，端口地址为25
-    stp.connect(mail_host, 25)  
+    # stp.connect(mail_host, 25)  网易邮箱
+    stp = smtplib.SMTP_SSL(mail_host)
     # set_debuglevel(1)可以打印出和SMTP服务器交互的所有信息
     stp.set_debuglevel(1)
     # 登录邮箱，传递参数1：邮箱地址，参数2：邮箱授权码
