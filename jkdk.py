@@ -19,7 +19,7 @@ driver = webdriver.Chrome('/usr/bin/chromedriver', options=chrome_options)
 
 def checkin(username, password, email_address, email_lisence):
     try:
-            #登录
+        #登录
         daka = "http://my.lzu.edu.cn:8080/login?service=http://my.lzu.edu.cn"
 
         driver.get(daka)
@@ -46,7 +46,8 @@ def checkin(username, password, email_address, email_lisence):
         except Exception as e:
             pass
 
-        driver.find_element_by_xpath("/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[3]/uni-view/uni-form/span/uni-view[13]/uni-button").click()
+        driver.find_element_by_css_selector("body > uni-app > uni-page > uni-page-wrapper > uni-page-body > uni-view > uni-view:nth-child(3) > uni-view > uni-form > span > uni-view.padding > uni-button").click()
+
         driver.switch_to.default_content()
         driver.find_element_by_xpath("/html/body/div[3]/div/div/div/img").click()
         driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/a[2]/span").click()
@@ -58,7 +59,11 @@ def checkin(username, password, email_address, email_lisence):
         sm("{}".format(email_address), "{}".format(email_lisence), "{}".format(email_address), "打卡成功！", "打卡成功！not bad!")
     except Exception as e:
         print('fail')
-    #发送失败邮件
+        #关闭浏览器
+        sleep(3)
+        driver.quit()
+        print('success')
+        #发送失败邮件
         sm("{}".format(email_address), "{}".format(email_lisence), "{}".format(email_address), "打卡失败！", "打卡失败！not well!建议手动打卡".format(email_address, email_lisence, email_address) )
         pass
 
